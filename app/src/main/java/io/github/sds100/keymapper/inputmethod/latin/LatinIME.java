@@ -1505,7 +1505,6 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         if (mInputLogic.mConnection.hasSelection()) {
             mInputLogic.sendDownUpKeyEvent(KeyEvent.KEYCODE_DEL);
             mInputLogic.sendDownUpKeyEvent(KeyEvent.KEYCODE_SHIFT_LEFT);
-            cleanupInternalStateForFinishInput();
         }
     }
 
