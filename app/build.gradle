@@ -3,14 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "io.github.sds100.keymapper.inputmethod.latin"
         minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 11
-        versionName "1.3.1"
+        targetSdkVersion 30
     }
 
     buildTypes {
@@ -42,6 +40,7 @@ android {
     lintOptions {
         checkReleaseBuilds false
     }
+    ndkVersion '21.3.6528147'
 }
 
 android.applicationVariants.all { variant ->
@@ -53,7 +52,7 @@ android.applicationVariants.all { variant ->
 dependencies {
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation "androidx.core:core-ktx:1.1.0"
+    implementation 'androidx.core:core-ktx:1.3.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
