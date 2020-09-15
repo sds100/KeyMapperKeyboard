@@ -420,11 +420,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
                     latinIme.deallocateMemory();
                     break;
                 case MSG_SWITCH_LANGUAGE_AUTOMATICALLY:
-<<<<<<< HEAD:app/src/main/java/io/github/sds100/keymapper/inputmethod/latin/LatinIME.java
                     latinIme.switchLanguage((InputMethodSubtype) msg.obj);
-=======
-                    latinIme.switchLanguage((InputMethodSubtype)msg.obj);
->>>>>>> c3276b9... trying to fix swipe cursor:app/src/main/java/org/dslul/openboard/inputmethod/latin/LatinIME.java
                     break;
             }
         }

@@ -9,6 +9,8 @@ android {
         applicationId "io.github.sds100.keymapper.inputmethod.latin"
         minSdkVersion 19
         targetSdkVersion 30
+        versionCode 10
+        versionName '1.4'
     }
 
     buildTypes {
@@ -33,7 +35,7 @@ android {
 
     externalNativeBuild {
         ndkBuild {
-            path 'src/main/native/jni/Android.mk'
+            path 'src/main/jni/Android.mk'
         }
     }
 
