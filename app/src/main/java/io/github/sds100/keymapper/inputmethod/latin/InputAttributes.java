@@ -20,8 +20,15 @@ import android.text.InputType;
 import android.util.Log;
 import android.view.inputmethod.EditorInfo;
 
+<<<<<<< HEAD:app/src/main/java/io/github/sds100/keymapper/inputmethod/latin/InputAttributes.java
 import io.github.sds100.keymapper.inputmethod.latin.common.StringUtils;
 import io.github.sds100.keymapper.inputmethod.latin.utils.InputTypeUtils;
+=======
+import androidx.core.view.inputmethod.EditorInfoCompat;
+
+import org.dslul.openboard.inputmethod.latin.common.StringUtils;
+import org.dslul.openboard.inputmethod.latin.utils.InputTypeUtils;
+>>>>>>> a6d7e2d... add incognito mode:app/src/main/java/org/dslul/openboard/inputmethod/latin/InputAttributes.java
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -104,9 +111,9 @@ public final class InputAttributes {
         // TODO: Have a helper method in InputTypeUtils
         // Make sure that passwords are not displayed in {@link SuggestionStripView}.
         final boolean shouldSuppressSuggestions = mIsPasswordField
-                || InputTypeUtils.isEmailVariation(variation)
-                || InputType.TYPE_TEXT_VARIATION_URI == variation
-                || InputType.TYPE_TEXT_VARIATION_FILTER == variation
+                //|| InputTypeUtils.isEmailVariation(variation)
+                //|| InputType.TYPE_TEXT_VARIATION_URI == variation
+                //|| InputType.TYPE_TEXT_VARIATION_FILTER == variation
                 //|| flagNoSuggestions
                 || flagAutoComplete;
         mShouldShowSuggestions = !shouldSuppressSuggestions;
@@ -142,7 +149,8 @@ public final class InputAttributes {
                 && InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS != variation
                 && InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD != variation;
 
-        mNoLearning = (editorInfo.imeOptions & EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING) != 0;
+
+        mNoLearning = flagNoSuggestions || (editorInfo.imeOptions & EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING) != 0;
     }
 
     public boolean isTypeNull() {
