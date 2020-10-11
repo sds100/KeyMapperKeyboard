@@ -16,7 +16,6 @@
 
 package io.github.sds100.keymapper.inputmethod.latin.utils;
 
-import io.github.sds100.keymapper.inputmethod.latin.about.AboutPreferences;
 import io.github.sds100.keymapper.inputmethod.latin.settings.AdvancedSettingsFragment;
 import io.github.sds100.keymapper.inputmethod.latin.settings.AppearanceSettingsFragment;
 import io.github.sds100.keymapper.inputmethod.latin.settings.CorrectionSettingsFragment;
@@ -37,7 +36,6 @@ import java.util.HashSet;
 public class FragmentUtils {
     private static final HashSet<String> sLatinImeFragments = new HashSet<>();
     static {
-        sLatinImeFragments.add(AboutPreferences.class.getName());
         sLatinImeFragments.add(PreferencesSettingsFragment.class.getName());
         sLatinImeFragments.add(AppearanceSettingsFragment.class.getName());
         sLatinImeFragments.add(ThemeSettingsFragment.class.getName());
