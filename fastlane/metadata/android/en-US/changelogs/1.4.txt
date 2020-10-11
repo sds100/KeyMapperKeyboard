@@ -2,4 +2,4 @@
 - AMOLED theme (Material Dark)
 - Space cursor and delete swipe now work in all apps
 - small improvements to themes
-- added languages: Romanian, Bulgarian, Dutch, Portugese, Esperanto, Greek, Turkish
+- added languages: Romanian, Bulgarian, Dutch, Portugese, Esperanto, Greek, Turkishj
