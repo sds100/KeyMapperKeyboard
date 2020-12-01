@@ -874,6 +874,8 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
                 cleanupInternalStateForFinishInput();
             }
         }
+        // KeyboardSwitcher will check by itself if theme update is necessary
+        mKeyboardSwitcher.updateKeyboardTheme();
         super.onConfigurationChanged(conf);
     }
 
