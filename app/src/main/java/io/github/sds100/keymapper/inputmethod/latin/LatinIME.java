@@ -32,7 +32,6 @@ import android.os.Build;
 import android.os.Debug;
 import android.os.IBinder;
 import android.os.Message;
-import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.text.InputType;
 import android.util.Log;
@@ -199,9 +198,9 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
     final HideSoftInputReceiver mHideSoftInputReceiver = new HideSoftInputReceiver(this);
 
     final static class KeyMapperBroadcastReceiver extends BroadcastReceiver {
-        private final InputMethodService mIms;
+        private final LatinIME mIms;
 
-        public KeyMapperBroadcastReceiver(InputMethodService ims) {
+        public KeyMapperBroadcastReceiver(LatinIME ims) {
             mIms = ims;
         }
 
@@ -263,11 +262,10 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
 
                     if (text == null) return;
 
-                    InputConnection ic = mIms.getCurrentInputConnection();
+                    if (mIms.mInputLogic == null) return;
+                    if (mIms.mInputLogic.mConnection == null) return;
 
-                    if (ic != null) {
-                        ic.commitText(text, 1);
-                    }
+                    mIms.mInputLogic.mConnection.commitText(text, 1);
 
                     break;
                 }
